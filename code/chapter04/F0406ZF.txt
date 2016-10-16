@@ -1,0 +1,18 @@
+; public zone master file
+; provides minimal public visibility of external services
+example.com. IN      SOA   ns1.example.com. hostmaster.example.com. (
+                              2003080800 ; se = serial number
+                              12h         ; ref = refresh
+                              15m        ; ret = update retry
+                              3w         ; ex = expiry
+                              3h      ; min = minimum
+                              )
+              IN      NS      ns1.example.com.
+              IN      NS      ns2.example.com.
+              IN      MX  10  mail.example.com.
+              IN      MX  20  mail.example.net.
+ns1           IN      A       192.168.254.1
+ns1           IN      A       192.168.254.2
+mail          IN      A       192.168.254.3
+www           IN      A       192.168.254.4
+ftp           IN      A       192.168.254.5

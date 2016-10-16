@@ -1,0 +1,14 @@
+; zone example.com fragment
+$ORIGIN example.com.
+...
+;DKIM TXT RR
+hope._domainkey  IN TXT "v=DKIM1;t=y;p=blah....blah;"
+; ADSP TXT RR
+_adsp._domainkey IN TXT "dkim=unknown;"
+; OR, if you like typing you could have written
+hope._domainkey.example.com.  IN TXT "v=DKIM1;t=y;p=blah....blah;"
+_adsp._domainkey.example.com. IN TXT "dkim=unknown;"
+; OR, using an $ORIGIN
+$ORIGIN _domainkey
+hope  IN TXT "v=DKIM1;t=y;p=blah....blah;"
+_adsp IN TXT "dkim=unknown;"

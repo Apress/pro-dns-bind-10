@@ -1,0 +1,26 @@
+; zone example.com fragment
+$ORIGIN example.com.
+...
+; DKIM TXT RR
+; DKIM and ADSP TXT RR for main domain
+domain._domainkey  IN TXT "v=DKIM1;t=s;p=blah....blah;"
+; ADSP TXT RR
+_adsp.domainkey IN TXT "dkim=unknown;"
+….
+; DKIM and ADSP for secure subdomain
+; DKIM TXT RR
+internal._domainkey.secure  IN TXT "v=DKIM1;t=s;p=blah....blah;"
+; ADSP TXT RR
+_adsp._domainkey.secure   IN TXT "dkim=discardable;"
+; OR, using an $ORIGIN
+$ORIGIN _domainkey.secure
+internal  IN TXT "v=DKIM1;t=s;p=blah....blah;"
+_adsp   IN TXT "dkim=discardable;"
+; if RRs appear below, $ORIGIN may have to be set to anew value
+….
+; ADSP for maillist subdomain
+; ADSP TXT RR
+_adsp._domainkey.maillist   IN TXT "dkim=discardable;"
+; OR, using an $ORIGIN
+$ORIGIN _domainkey.maillist
+_adsp     IN TXT "dkim=discardable;"

@@ -1,0 +1,4 @@
+key "update-mx" (
+     alogorithm hmac-md5;
+     secret 7aBDy3XIJhA775WQ4FoqUA==;
+};

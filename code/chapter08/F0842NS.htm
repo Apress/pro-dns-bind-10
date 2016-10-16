@@ -1,0 +1,8 @@
+// local named.conf
+…
+zone "blacklist.example.com"{
+  type slave;
+  file "slave/blacklist.example.com"
+  masters {192.168.2.23;};
+  notify no; // inhibits notify propagation
+}

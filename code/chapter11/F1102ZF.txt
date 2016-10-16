@@ -1,0 +1,153 @@
+; File written on Sat Dec 18 21:31:01 2010
+; dnssec_signzone version 9.7.2-P2
+example.com.  86400 IN SOA ns1.example.com. hostmaster.example.com. (
+                         2010121500 ; serial
+                         43200      ; refresh (12 hours)
+                         600        ; retry (10 minutes)
+                         604800     ; expire (1 week)
+                         10800      ; minimum (3 hours)
+                         )
+               86400    RRSIG  SOA 8 2 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         Mnm5RaKEFAW4V5dRhP70xLtGAFMb/Zsej2vH
+                         mK507zHL+U2Hbx+arMMoA/aOxtp6Jxp0FWM3
+                         67VHclTjjGX9xf++6qvA65JHRNvKoZgXGtXI
+                         VGG6ve8A8J9LRePtCKwo3WfhtLEMFsd1KI6o
+                         JTViPzs3UDEqgAvy8rgtvwr80a8= )
+               86400   NS             ns1.example.com.
+               86400   NS             ns2.example.com.
+               86400   RRSIG   NS 8 2 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         ubbRJV+DiNmgQITtncLOCjIw4cfB4qnC+DX8
+                         ....
+                         S78T5Fxh5SbLBPTBKmlKvKxcx6k= )
+               86400   MX         10 mail.example.com.
+               86400   MX         10 mail1.example.com.
+               86400   RRSIG   MX 8 2 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         K5CVLZDZ/p8KeVVJ/2kxMjN8QaYLZRmvcbi0
+                         ....
+                         T8a4tw5E+Sv/BX+x1QqksFics64= )
+               10800   NSEC    _ldap._tcp.example.com. NS SOA MX RRSIG NSEC DNSKEY
+               10800   RRSIG   NSEC 8 2 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         UO8drM7W0wyaF6FXqFuybQpUUGvhRr58xM2S
+                         ....
+                         PFnee80+vXd4sgN6+SfY6AyQV2M= )
+               86400   DNSKEY  256 3 8 (
+                         AwEAAe9cQz4kHCCaocjIlSB547QVSUZ9xYBP
+                         qTXPX2oTXrzyHqfgPPnMZFvvPwGDZtZTq1K9
+                         kkEFXJ9FpwvlslKZT0WemnIci4qH8uWmoY8n
+                         7/n/bwLGAuyE6R1FMWTpDSy8sDSjPKaqqXXf
+                         8R77exTNyWDf0RfdHvQXCjnxGls1o4Y5
+                         ) ; key id = 27228
+               86400   DNSKEY  257 3 8 (
+                         AwEAAcdPX24uAsa2b2dfBGb+GfC2kkEpaDCE
+                         ....
+                         5Jq6Dp+JyHN03OHqgHv2KrRuvUOXV+8l
+                         ) ; key id = 34957
+               86400   RRSIG   DNSKEY 8 2 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         rRjX4FpgIhRiZgwE1G8pOKH8Uhz2JksbJsif
+                         ....
+                         apROsSPuroSFcRYyxcfLG3HdIS4= )
+               86400   RRSIG   DNSKEY 8 2 86400 20110118013101 (
+                         20101219013101 34957 example.com.
+                         rGqGH632fMqKC5G5yhLZiTUL3liMzu+CTiC1
+                         ....
+                         j3d5ig0DKdRHEZKWnvaPZfVWKXo= )
+_ldap._tcp.example.com. 86400 IN SRV 5 2 235 www.example.com.
+               86400   RRSIG   SRV 8 4 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         HvjoUq/sQKZb/DnGyWthxNQyeFs62CRtU43a
+                         ....
+                         oYmF3EUjBdIgBAJiqdTR/2pqBus= )
+               10800   NSEC    ftp.example.com. SRV RRSIG NSEC
+               10800   RRSIG   NSEC 8 4 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         fYNrf2jm73jltGDC7aF6DlSTvcyCpZ+cHSiT
+                         ....
+                         ZALrIjznKyH8pl66qE989YCIneY= )
+ftp.example.com. 86400 IN CNAME ftp.example.net.
+               86400   RRSIG   CNAME 8 3 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         hjChA2GkSRZeQMFY7+LJTlIHDVEL7ZQ3zmyU
+                         ....
+                         2pOU1junt22N21bYHT7mF6SZsec= )
+               10800   NSEC    mail.example.com. CNAME RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         0dn+xpgWlx7TRJufHlhkfAxo9wMSCG5O25kb
+                         ....
+                         9NE+9NMhbqDhIi0fQ8GEb/b2t4M= )
+mail1.example.com. 86400	 IN A 192.168.2.4
+               86400   RRSIG   A 8 3 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         bMWvyVmoNcBcq/T4zVABdramRz60thZGITcz
+                         ....
+                         kojE4FfJRdWjCB6F/lpt1pL72nE= )
+               10800   NSEC    ns1.example.com. A RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         B10ytuM0qcslrDTDnquEKEvO6UVvgxe0ROxZ
+                         ....
+                         7D6lMBbDxLcrab4kQY63PjKjFtw= )
+ns1.example.com. 86400 IN A    192.168.2.6
+               86400   RRSIG   A 8 3 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         yV3AwrksW8s54jMZdDFsicAVXcdkfvP7jgNo
+                         ....
+                         i88/ViKCIREhX3Jl33u0zwv4720= )
+               10800   NSEC    ns2.example.com. A RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         R6NF/W2J59eRnaBSQCvpLtjvHXcsV8g1OEUb
+                         ....
+                         1kjsIkAoSJ6mMnxKhxj7o+CYxJ4= )
+ns2.example.com. 86400 IN A    192.168.23.23
+               86400   RRSIG   A 8 3 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         juzbAhNyGevhrrpKq0Y82EXVStLTZk42/vPt
+                         ....
+                         7ahKR9HNA9mg2go+H+QLQVYQ18I= )
+               10800   NSEC    sub.example.com. A RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         a63Sf4DP1UEbqdZKR05I6vMmbNmy9vo7YgS2
+                         ....
+                         aCRIk45rOr2aSVGe19kCZQc+fF0= )
+mail.example.com. 86400 IN A   192.168.2.3
+               86400   RRSIG   A 8 3 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         hpArsBJoHqi9+9Ys4o46WZogwd8Li4Zn3FkQ
+                         ....
+                         MTnI6ULQvwcFfVVif07zs5xBa8U= )
+               10800   NSEC    mail1.example.com. A RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         TJ+EDteAhUV1KNPG+tbDbGz0jjKjqdHkIoZd
+                         ....
+                         qtAtFhFysMH7JFvnKZEOeRec2T0= )
+sub.example.com. 86400 IN NS   ns3.sub.example.com.
+               86400 IN NS     ns4.sub.example.com.
+               10800   NSEC    www.example.com. NS RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         UxsUTlFZ9HIIOelqkHPFpoA7HcB/o/oZchdD
+                         ....
+                         NbjZ42hmv5kBMq8RKX0Zql4hUsc= )
+ns3.sub.example.com. 86400 IN A 10.2.3.4
+ns4.sub.example.com. 86400 IN A 10.2.3.5
+www.example.com. 86400     IN A 10.1.2.1
+               86400 IN A      172.16.2.1
+               86400   RRSIG   A 8 3 86400 20110118013101 (
+                         20101219013101 27228 example.com.
+                         wtBArhmhUS76gzkjQR4oun0HMSpeI7UngTFO
+                         ....
+                         FVejigwrKP0x+DGGsj6t9qetfmE= )
+               10800   NSEC    example.com. A RRSIG NSEC
+               10800   RRSIG   NSEC 8 3 10800 20110118013101 (
+                         20101219013101 27228 example.com.
+                         k95zDrRq4UmJAAea+m2Ag2mVtqnMgSGMqHCR
+                         ....
+                         NFQ9D+/Tvo/Te6ha70Pvs2JGN3Y= )

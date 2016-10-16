@@ -1,0 +1,15 @@
+sub.example.com. 86400 IN NS   ns3.sub.example.com.
+               86400 IN   NS    ns4.sub.example.com.
+               86400      DS    23110 8 1 (
+                            9D9A1E894BEE23B85FD8807A629D3236C2E9
+                            9B7E )
+               86400      DS    23110 8 2 (
+                            12264712A245E1EEB81E077870FB72B19F01
+                            E740F9FAA71F9C2A921AC61C35B6 )
+               86400      RRSIG DS 8 3 86400 20110119221601 (
+                            20101220221601 27228 example.com.
+                            EEnwSuLJjm36aJsFm3RWf0G8T6k= )
+               10800      NSEC  www.example.com. NS DS RRSIG NSEC
+               10800      RRSIG	NSEC 8 3 10800 20110119221601 (
+                            20101220221601 27228 example.com.
+                            fFOyyxzJaHqVK/I0trYo4/5CSK8= )

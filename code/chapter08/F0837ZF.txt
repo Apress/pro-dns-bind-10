@@ -1,0 +1,4 @@
+$TTL 86400 ; 24 hours
+@ IN SOA @ hostmaster (2010020800 12h 15m 1w 3h)
+@ IN NS localhost.
+1.0.0 IN PTR localhost.

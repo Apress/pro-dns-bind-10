@@ -1,0 +1,50 @@
+$TTL 86400 ; 1 day
+$ORIGIN example.com.
+@           IN SOA ns1.example.com. hostmaster.example.com. (
+                        2010121500 ; serial
+43200      ; refresh (12 hours)
+                        600        ; retry (10 minutes)
+                        604800     ; expire (1 week)
+                        10800      ; nx (3 hours)
+                        )
+            IN  NS ns1.example.com.
+            IN  NS ns2.example.com.
+            IN  MX 10 mail.example.com.
+            IN  MX 10 mail1.example.com.
+_ldap._tcp  IN  SRV 5 2 235 www
+ns1         IN  A  192.168.2.6
+ns2         IN  A  192.168.23.23
+www         IN  A  10.1.2.1
+            IN  A  172.16.2.1
+ftp         IN CNAME ftp.example.net.
+mail        IN  A  192.168.2.3
+mail1       IN  A  192.168.2.4
+$ORIGIN sub.example.com.
+@           IN  NS ns3.sub.example.com.
+            IN  NS ns4.sub.example.com.
+ns3         IN  A  10.2.3.4 ; glue RR
+ns4         IN  A  10.2.3.5 ; glue RR
+; This is a key-signing key, keyid 34957, for example.com.
+; Created: 20101216115248 (Thu Dec 16 06:52:48 2010)
+; Publish: 20101216115248 (Thu Dec 16 06:52:48 2010)
+; Activate: 20101216115248 (Thu Dec 16 06:52:48 2010)
+example.com. IN DNSKEY 257 3 8 (AwEAAcdPX24uAsa2b2dfBG
+                                b+GfC2kkEpaDCEXcS2oMmsL
+                                mxfUi0jw4+5FlEB74AmvNTY
+                                ovJKhcekPlJGUqULnpohbcB
+                                qgtGKGPtOy43taTl3kCoH B
+                                T+8IE1RzCGnDmG7HNWB6Bjk
+                                Qqp1gk/R5Jq6Dp+JyHN03OH
+                                qgHv2KrRu vUOXV+8l)
+; This is a zone-signing key, keyid 27228, for example.com.
+; Created: 20101216115101 (Thu Dec 16 06:51:01 2010)
+; Publish: 20101216115101 (Thu Dec 16 06:51:01 2010)
+; Activate: 20101216115101 (Thu Dec 16 06:51:01 2010)
+example.com. IN DNSKEY 256 3 8 (AwEAAe9cQz4kHCCaocjIlSB
+                                547QVSUZ9xYBPqTXPX2oTXr
+                                zyHqfgPPnM ZFvvPwGDZtZT
+                                q1K9kkEFXJ9FpwvlslKZT0W
+                                emnIci4qH8uWmoY8n7/n/ b
+                                wLGAuyE6R1FMWTpDSy8sDSj
+                                PKaqqXXf8R77exTNyWDf0Rf
+                                dHvQXCjnx Gls1o4Y5)

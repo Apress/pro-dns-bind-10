@@ -1,0 +1,23 @@
+$TTL 2d # default RR TTL
+$ORIGIN blacklist.example.com
+               IN      SOA   ns1.example.com. hostmaster.example.com.(
+                              2010080800 ; sn = serial number
+                              3h         ; refresh
+                              15m        ; retry = refresh retry
+                              3w         ; expiry
+                              3h         ; nx= nxdomain ttl
+                              )
+               IN      NS      ns1.example.com.
+               IN      NS      ns2.example.com.
+# black list records - using origin substitution rule
+# order not important other than for local usage reasons
+# by convention this address should be listed to allow for external testing 
+2.0.0.127      IN      A			 127.0.0.2
+# black list RRs
+135.2.168.192  IN  A   127.0.0.2 # presence result
+                         IN  A    127.0.0.5 # optional reason/result code 
+                         IN  TXT "Optional - Some explanation for black listing"
+# the above entries expand to 135.2.168.192.blacklist.example.com
+...
+135.17.168.192 IN      A       127.0.0.2 # presence result
+...

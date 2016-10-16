@@ -1,0 +1,9 @@
+// default for everything else lies in a default view
+view "default"
+ match-clients { "any"; }; // must be in the last clause
+ zone "example.com" {
+   type master;
+   // zone file will return www.example.= 192.168.1.2
+   file "view/master.example.com.default";
+  };
+};

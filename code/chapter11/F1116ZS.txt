@@ -1,0 +1,18 @@
+               86400     DNSKEY    256 3 8 (
+                            kzenp/JaUHd6+VUjLiMGrQ3keBID0clv
+                            ) ; key id = 10476
+               86400     DNSKEY    257 3 8 (
+                            WcArjB35mSEVw+ZWGnmQujc=
+                            ) ; key id = 32647
+               86400     DNSKEY    257 3 8 (
+                            5Jq6Dp+JyHN03OHqgHv2KrRuvUOXV+8l
+                            ) ; key id = 34957
+               86400     RRSIG     DNSKEY 8 2 86400 20110119230454 (
+                            20101220230454 10476 example.com.
+                            eqLnidIMy7jO+MYlsNoWfpX+XtE= )
+               86400     RRSIG     DNSKEY 8 2 86400 20110119230454 (
+                            20101220230454 32647 example.com.
+                            X+ZOKqjBKy8hLFYtzg== )
+               86400     RRSIG     DNSKEY 8 2 86400 20110119230454 (
+                            20101220230454 34957 example.com.
+                            cLOrfsoYSui3nskUi9A6h43B1AA= )

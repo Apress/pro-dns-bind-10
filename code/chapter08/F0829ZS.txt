@@ -1,0 +1,15 @@
+; zone example.com fragment
+$ORIGIN example.com.
+...
+; DKIM TXT RR
+mail._domainkey  IN TXT "v=DKIM1;t=s;p=blah....blah;"
+; ADSP TXT RR
+_adsp._domainkey IN TXT "dkim=discardable;"
+; OR, if you like typing you could have written
+mail._domainkey.example.com.  IN TXT "v=DKIM1;t=s;p=blah....blah;"
+_adsp._domainkey.example.com. IN TXT "dkim=discardable;"
+; OR, using an $ORIGIN
+$ORIGIN _domainkey
+mail  IN TXT "v=DKIM1;t=s;p=blah....blah;"
+_adsp IN TXT "dkim=discardable;"
+; if RRs appear below, $ORIGIN may have to be set to a new value

@@ -1,0 +1,34 @@
+// View based geographic name server for EXAMPLE, INC.
+// global options
+options {
+  …
+  recursion no;         // authoritative only
+};
+…
+// map service to geographic origination
+view "gondor" {
+ match-clients { 172.15/16; 172.14/16; }; // originate in gondor
+  zone "example.com" {
+   type master;
+   // zone file will return www.example.com = 172.2.1.1
+   file "view/gondor.example.com";
+   …
+  };
+}; // end view
+view "mordor" {
+ match-clients { 172.16/16; }; // originate in mordor
+  zone "example.com" {
+   type master;
+   // zone file will return www.example.com = 172.1.1.1
+   file "view/mordor.example.com ";
+   …
+  };
+}; // end view
+
+// default for everything else lies outside views
+ zone "example.com" {
+   type master;
+	  // zone file will return www.example.com = 192.168.1.2
+   file "view/master.example.com";
+   …
+  };
